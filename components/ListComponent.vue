@@ -1,17 +1,18 @@
 <template>
   <div>
-    {{todo}}
+    <input v-model="todo.isDone" type="checkbox">
+    <label>{{ todo.description }}</label> -- {{todo}}
   </div>
 </template>
-<script lang="ts" setup>
+<script lang="ts">
 import {PropType} from '@vue/runtime-core';
-import {Todo} from '~/models/Todo';
+import {Task} from '~/models/Task';
 
 export default defineComponent({
   props: {
     todo: {
       required: true,
-      type: Object as PropType<Todo>
+      type: Object as PropType<Task>
     }
   }
 })
